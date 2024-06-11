@@ -12,6 +12,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
+
 Route::group(['middleware' => 'guest'], function () {
     Route::get('/register', [AuthController::class, 'register'])->name('register');
     Route::post('/register', [AuthController::class, 'registerPost'])->name('register');
@@ -24,15 +28,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('barang', BarangController::class);
     Route::resource('barangmasuk', MasukController::class);
     Route::resource('barangkeluar', KeluarController::class);
+    Route::get('/kategori/{id}', 'KategoriController@show')->name('kategori.show');
+    Route::get('/barang/{id}', 'BarangController@show')->name('barang.show');
+    Route::get('/search', [SearchController::class, 'search'])->name('search');
     Route::delete('/logout', [AuthController::class, 'logout'])->name('logout');
     Route::post('logout', [LoginController::class,'logout'])->name('logout');
 });
-
-Route::get('/search', [SearchController::class, 'search'])->name('search');
-
-Route::get('/kategori/{id}', 'KategoriController@show')->name('kategori.show');
-Route::get('/barang/{id}', 'BarangController@show')->name('barang.show');
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
