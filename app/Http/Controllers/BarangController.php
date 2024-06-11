@@ -9,30 +9,6 @@ use Illuminate\Support\Facades\DB;
 
 class BarangController extends Controller
 {
-    public function search(Request $request)
-{
-    $query = $request->input('query');
-
-    // Cari kategori berdasarkan nama
-    $kategori = Kategori::where('deskripsi', 'LIKE', "%$query%")->get();
-
-    // Cari barang berdasarkan nama
-    $barang = Barang::where('seri', 'LIKE', "%$query%")->get();
-
-    // Jika hasil pencarian mengembalikan satu kategori, redirect ke tampilan show kategori
-    if ($kategori->count() === 1) {
-        return redirect()->route('kategori.show', $kategori->first()->id);
-    }
-
-    // Jika hasil pencarian mengembalikan satu barang, redirect ke tampilan show barang
-    if ($barang->count() === 1) {
-        return redirect()->route('barang.show', $barang->first()->id);
-    }
-
-    // Jika tidak ada hasil yang ditemukan, kembalikan ke halaman sebelumnya dengan pesan
-    return back()->with('error', 'Kategori atau Barang tidak ditemukan');
-}
-
 	public function index(Request $request)
     {
         $rsetBarang = Barang::with('kategori')->latest()->paginate(10);
@@ -40,7 +16,6 @@ class BarangController extends Controller
         return view('v_barang.index', compact('rsetBarang'))
             ->with('i', (request()->input('page', 1) - 1) * 10);
     }
-
 
     /**
      * Show the form for creating a new resource.
