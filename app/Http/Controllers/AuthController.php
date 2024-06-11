@@ -40,7 +40,7 @@ class AuthController extends Controller
         ];
  
         if (Auth::attempt($credetials)) {
-            return redirect('barang')->with('success', 'Login Success');
+            return redirect('dashboard')->with('success', 'Login Success');
         }
  
         return back()->with('error', 'Error Email or Password');
