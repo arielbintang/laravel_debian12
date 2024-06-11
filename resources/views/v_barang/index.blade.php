@@ -29,14 +29,14 @@
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th>NO</th>
-                            <th>MERK</th>
-                            <th>SERI</th>
-                            <th>SPESIFIKASI</th>
-                            <th>STOK</th>
-                            <th>KATEGORI</th>
-                            <th>FOTO</th>
-                            <th style="width: 15%">AKSI</th>
+                            <th>No</th>
+                            <th>Merk</th>
+                            <th>Seri</th>
+                            <th>Spesifikasi</th>
+                            <th>Stok</th>
+                            <th>Kategori</th>
+                            <th>Foto</th>
+                            <th style="width: 15%">Action</th>
 
 
                         </tr>
