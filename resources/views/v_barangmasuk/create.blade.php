@@ -18,6 +18,9 @@
                             <div class="form-group">
                                 <label for="qty_masuk">Qty Masuk:</label>
                                 <input type="number" name="qty_masuk" class="form-control" required>
+                                @error('qty_masuk')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
 
                             <div class="form-group">
