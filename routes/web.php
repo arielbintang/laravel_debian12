@@ -6,6 +6,7 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\MasukController;
 use App\Http\Controllers\KeluarController;
+use App\Http\Controllers\SearchController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -23,13 +24,15 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('barang', BarangController::class);
     Route::resource('barangmasuk', MasukController::class);
     Route::resource('barangkeluar', KeluarController::class);
-    Route::resource('product', ProductController::class);
-    Route::resource('category', CategoryController::class);
     Route::delete('/logout', [AuthController::class, 'logout'])->name('logout');
     Route::post('logout', [LoginController::class,'logout'])->name('logout');
 });
 
-Route::get('/search', [BarangController::class, 'search'])->name('search');
+Route::get('/search', [SearchController::class, 'search'])->name('search');
 
 Route::get('/kategori/{id}', 'KategoriController@show')->name('kategori.show');
 Route::get('/barang/{id}', 'BarangController@show')->name('barang.show');
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
