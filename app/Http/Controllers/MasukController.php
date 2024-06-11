@@ -27,7 +27,7 @@ class MasukController extends Controller
         // Validasi data
         $request->validate([
             'tgl_masuk' => 'required',
-            'qty_masuk' => 'required',
+            'qty_masuk' => 'required|integer|min:1',
             'barang_id' => 'required',
         ]);
 
