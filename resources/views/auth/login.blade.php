@@ -15,6 +15,13 @@
 
     <!-- Custom styles for this template-->
     <link href="{{ asset('theme/css/sb-admin-2.min.css') }}" rel="stylesheet">
+    <style>
+        .bg-login-image {
+            background: url('{{ asset('storage/images/login.jpg') }}');
+            background-position: center;
+            background-size: cover;
+        }
+    </style>
 </head>
 <body class="bg-gradient-primary">
 <div class="container">

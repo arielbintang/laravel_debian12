@@ -12,7 +12,7 @@ class SearchController extends Controller
     {
         $query = $request->input('query');
 
-        $barangs = Barang::where('seri', 'LIKE', "%{$query}%")->get();
+        $barangs = Barang::where('merk', 'LIKE', "%{$query}%")->get();
         $kategoris = Kategori::where('deskripsi', 'LIKE', "%{$query}%")->get();
 
         if ($barangs->isEmpty() && $kategoris->isEmpty()) {
