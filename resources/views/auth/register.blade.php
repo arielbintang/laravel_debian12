@@ -17,7 +17,7 @@
     <link href="{{ asset('theme/css/sb-admin-2.min.css') }}" rel="stylesheet">
     <style>
         .bg-register-image {
-            background: url('{{ asset('storage/images/register.jpg') }}');
+            background: url('{{ asset('https://images.pexels.com/photos/20331914/pexels-photo-20331914/free-photo-of-hewan-peliharaan-peliharaan-piaraan-hewan-piaraan.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') }}');
             background-position: center;
             background-size: cover;
         }

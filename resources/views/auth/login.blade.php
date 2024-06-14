@@ -17,7 +17,7 @@
     <link href="{{ asset('theme/css/sb-admin-2.min.css') }}" rel="stylesheet">
     <style>
         .bg-login-image {
-            background: url('{{ asset('storage/images/login.jpg') }}');
+            background: url('{{ asset('https://images.pexels.com/photos/20635784/pexels-photo-20635784/free-photo-of-makanan-hewan-peliharaan-peliharaan-piaraan.jpeg') }}');
             background-position: center;
             background-size: cover;
         }
